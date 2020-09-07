@@ -6,17 +6,17 @@ pipeline {
                 git 'https://github.com/prasadallu121/Terraform.git'
             }
         }
-        stage('Terraform Init') {
+        stage('Terraform-Init') {
             steps {
                 sh 'sh label: '', script: 'terraform init'
             }
         }
-        stage('Terraform Validate') {
+        stage('Terraform-Validate') {
             steps {
                 sh 'sh label: '', script: 'terraform validate'
             }
         }
-        stage('Terraform Plan') {
+        stage('Terraform-Plan') {
             steps {
                 sh 'sh label: '', script: 'terraform plan'
             }
