@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('GIT Checkout') {
             steps {
-                sh 'mvn -B clean verify'
+                git 'https://github.com/prasadallu121/Terraform.git'
             }
         }
-        stage('Example Build') {
+        stage('Terraform Init') {
             steps {
-                sh 'mvn -B clean verify'
+                sh 'sh label: '', script: 'terraform init'
             }
         }
     }
