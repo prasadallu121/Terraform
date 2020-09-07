@@ -6,7 +6,7 @@ pipeline {
     stages {
     stage('terraform version') {
             steps {
-                sh echo "${terraform} terraform -version"            }
+                echo "${terraform} terraform -version"            }
         }
        }
 }
