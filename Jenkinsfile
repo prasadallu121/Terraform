@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     tools {
-    def terraform = tool name: 'terraform', type: 'terraform'
+    tool name: 'terraform', type: 'terraform'
     }
     stages {
     stage('terraform version') {
