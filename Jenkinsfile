@@ -11,15 +11,5 @@ pipeline {
                 sh 'sh label: '', script: 'terraform init'
             }
         }
-        stage('Terraform-Validate') {
-            steps {
-                sh label: '', script: 'terraform validate'
-            }
-        }
-        stage('Terraform-Plan') {
-            steps {
-                sh 'sh label: '', script: 'terraform plan'
-            }
-        }
-    }
+       }
 }
