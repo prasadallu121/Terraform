@@ -1,15 +1,12 @@
 pipeline {
     agent any 
+    tools {
+    def terraform = tool name: 'terraform', type: 'terraform'
+    }
     stages {
-    stage('GIT Checkout') {
+    stage('terraform version') {
             steps {
-                git 'https://github.com/prasadallu121/Terraform.git'
-            }
-        }
-        stage('Terraform-Init') {
-            steps {
-                def terraform = tool name: 'terraform', type: 'terraform'
-                sh "${terraform}/usr/bin terraform init"
+                sh 'terraform -version'
             }
         }
        }
