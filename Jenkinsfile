@@ -1,13 +1,12 @@
 pipeline {
-    agent any 
-    tools {
-    tool name: 'terraform', type: 'terraform'
+    agent any
+    environment {
+    def terraform = '/usr/bin'
     }
     stages {
     stage('terraform version') {
             steps {
-                sh 'terraform -version'
-            }
+                sh echo "${terraform} terraform -version"            }
         }
        }
 }
