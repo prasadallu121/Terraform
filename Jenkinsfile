@@ -4,9 +4,14 @@ pipeline {
     def terraform = '/usr/bin'
     }
     stages {
-    stage('terraform version') {
+      stage('GIT Checkout') {
             steps {
-                sh 'echo "${terraform} terraform -version"'          
+                git 'https://github.com/prasadallu121/Terraform.git'      
+            }
+        }
+     stage('Terraform-Init') {
+            steps {
+                sh label: '', script: 'terraform init'    
             }
         }
        }
