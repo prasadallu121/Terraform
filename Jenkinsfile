@@ -3,10 +3,7 @@ pipeline {
     environment {
     def terraform = '/usr/bin'
     }
-    options {
-    timestamps()
-    }
-    stages {
+     stages {
       stage('GIT Checkout') {
             steps {
                 git 'https://github.com/prasadallu121/Terraform.git'      
